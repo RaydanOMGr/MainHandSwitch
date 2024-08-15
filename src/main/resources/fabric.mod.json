@@ -3,35 +3,26 @@
 	"id": "mainhand-switch",
 	"version": "${version}",
 	"name": "MainhandSwitch",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Switch the main hand by the press of one button",
 	"authors": [
-		"Me!"
+		"Nikhard",
+		"RaydanOMG"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/RaydanOMG/MainHandSwitch"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/mainhand-switch/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"net.nikhard.mainhandswitch.MainhandSwitch"
-		],
-		"fabric-datagen": [
-			"net.nikhard.mainhandswitch.MainhandSwitchDataGenerator"
 		]
 	},
-	"mixins": [
-      "mainhand-switch.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.15.3",
-		"minecraft": "~1.20.1",
+		"minecraft": "*",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
