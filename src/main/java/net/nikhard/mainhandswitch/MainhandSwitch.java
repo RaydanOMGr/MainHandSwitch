@@ -21,16 +21,15 @@ public class MainhandSwitch implements ClientModInitializer {
 	public boolean clicked; // Anti-trrrrrrrr variable
 
 	@Override
-	public void onInitialize() {
+	public void onInitializeClient() {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (!BINDING.isPressed()) {
 				clicked = false;
 			}
 			if (BINDING.isPressed()){
-				if (client.player.getMainArm() == Arm.RIGHT && !clicked) {
-					client.player.setMainArm(Arm.LEFT);
-				} else if (client.player.getMainArm() == Arm.LEFT && !clicked) {
-					client.player.setMainArm(Arm.RIGHT);
+				if (!clicked) {
+					Arm currentArm = client.player.getMainArm();
+					client.player.setMainArm(currentArm == Arm.RIGHT ? Arm.LEFT : Arm.RIGHT);
 				}
 				clicked = true;
 			}
